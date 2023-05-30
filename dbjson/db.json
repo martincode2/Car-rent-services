@@ -1,0 +1,40 @@
+{
+  "cars-details": [
+    {
+      "id": 1,
+      "brand": "Telsa",
+      "carName": "Telsa  Madula",
+      "model": "Model 1",
+      "price": "50000",
+      "speed": "300",
+      "description": "This car is used electricity energy for engine move "
+    },
+    {
+      "id": 2,
+      "brand": "Toyota",
+      "carName": "Mitsubish",
+      "model": "Model 2",
+      "price": "30000",
+      "speed": "2000 km/h",
+      "description": "This vehicle Amazing to engine stroker "
+    },
+    {
+      "id": 3,
+      "brand": "Benzi",
+      "carName": "Audi",
+      "model": "Model3",
+      "price": "60000",
+      "speed": "1000 km/h",
+      "description": "Is car with traveling from the hills"
+    },
+    {
+      "id": 4,
+      "brand": "Engrand",
+      "carName": "Bugatti",
+      "model": "Mode 4",
+      "price": "7000",
+      "speed": "3000",
+      "description": "very faster speed running in the road"
+    }
+  ]
+}

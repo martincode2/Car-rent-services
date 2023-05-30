@@ -1,0 +1,38 @@
+{
+  "Car-rent-customers": [
+    {
+      "id": "simbi",
+      "email": "simbi@gmail.com",
+      "phone": "+25078999930",
+      "password": "123456"
+    },
+    {
+      "id": "Admin",
+      "password": "admin123"
+    },
+    {
+      "id": "Tom",
+      "email": "tom@gmail.com",
+      "phone": "+25078894559",
+      "password": "123456"
+    },
+    {
+      "id": "Ame",
+      "email": "aime@gmail.com",
+      "phone": "+250788900",
+      "password": "123456"
+    },
+    {
+      "id": "marie",
+      "email": "marie@gmail.com",
+      "phone": "+2507889055",
+      "password": "12345"
+    },
+    {
+      "id": "peter",
+      "email": "pter@gmail.com",
+      "phone": "+26900444444",
+      "password": "12345"
+    }
+  ]
+}

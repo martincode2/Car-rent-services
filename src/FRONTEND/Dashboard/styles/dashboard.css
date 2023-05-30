@@ -1,0 +1,129 @@
+.dashboard{
+    margin-top: 100px;
+    padding: 0px 30px;
+
+}
+
+.single_card{
+    
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 5px;
+   
+}
+.single_card:nth-child(1){
+    background: var(--card-01-bg);
+}
+
+.single_card:nth-child(2){
+    background: var(--card-02-bg);
+}
+
+.single_card:nth-child(3){
+    background: var(--card-03-bg);
+}
+
+.single_card:nth-child(4){
+    background: var(--card-04-bg);
+}
+
+.card_content h4{
+    color: var(--heading-color);
+    font-size: 1rem;
+    font-weight: 400;
+}
+.card_content span{
+    color: var(--heading-color);
+    font-size: 2rem;
+
+}
+.card_icon{
+    font-size: 2rem;
+    font-weight: 400 !important;
+    color: rgb(225, 255, 255, 0.845);
+
+}
+.dashboard_cards{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 2rem;
+}
+.stastics{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    column-gap: 2rem;
+    margin-top: 2rem; 
+
+
+
+}
+.stats{
+    background: var(--primary-color);
+    height: 320px;
+    padding: 30px;
+    border-radius: 5px;
+    padding-bottom: 50px;
+
+}
+.tooltip_style{
+    background: var(--body-bg) !important;
+    color: #fff;
+
+
+}
+.stats_title{
+color: #fff;
+font-size: 1.2rem;
+font-weight: 500;
+margin-bottom: 20px;
+}
+.remmand_car_card{
+    padding: 20px;
+    border-radius: 5px;
+    background: var(--recommend-car01-bg);
+}
+.recommand_car_top h5{
+    display: flex;
+    column-gap: 1rem;
+    color: var(--body-bg);
+    align-items: center ;
+    margin-bottom: 10px;
+
+
+
+}
+
+.recommand_car_top h5  span i{
+    font-size: 1.2rem;
+
+}
+.recomand_card-bottom h4{
+    font-size: 1.3rem;
+    margin: 10px 0px;
+
+}
+.recommand_card_other{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.recommand_icons{
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+     
+}
+
+.recommand_icons p:nth-child(1){
+   display: flex;
+   align-items: center;
+   column-gap: 1rem; 
+
+}
+h1{
+
+    font-size: 30x;
+    font-family: 'Courier New', Courier, monospace;
+}

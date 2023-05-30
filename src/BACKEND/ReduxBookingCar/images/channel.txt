@@ -1,0 +1,523 @@
+"proxy": "http://localhost:8080",
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Register</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="447" border="1">
+    <tr>
+      <td width="188">Student ID </td>
+      <td width="243"><label></label></td>
+    </tr>
+    <tr>
+      <td>Student Names</td>
+      <td><label>
+        <input type="text" name="Name" />
+      </label></td>
+    </tr>
+    <tr>
+      <td>Student Age</td>
+      <td><label>
+        <input type="text" name="Age" />
+      </label></td>
+    </tr>
+    <tr>
+      <td>Student Sex</td>
+      <td><label>
+        <input type="text" name="Sex" />
+      </label></td>
+    </tr>
+	 <tr>
+        <td height="48" colspan="2"><input type="submit" name="button" id="button" value="Submit" /></td>
+        </tr>
+  </table>
+  
+  <?php
+ include'connection.php';
+ if(isset($_POST['button']))
+{
+ $id=$_POST['id'];
+ $Name=$_POST['Name'];
+
+ $Age=$_POST['Age'];
+ $Sex=$_POST['Sex'];
+
+	$connect = mysql_connect("localhost","root","")or die ("couldn't not connect to the database");
+mysql_select_db("registrationdb")or die ("couldn't find database");
+
+$query= mysql_query("insert into student(id,Name,Age,Sex)values('$id','$Name','$Age','$Sex')") or die (mysql_error());
+
+if($query)
+{
+echo  "Record has been Successfully inserted!!";
+}
+else
+{
+echo "Error!";
+}}
+  ?>
+ 
+</form>
+</body>
+</html>
+
+<!---------------------------------------------------------------------------------------------------------------SAVED  HERE------------------>
+
+
+
+
+import './App.css';
+
+
+import 'remixicon/fonts/remixicon.css'
+import Login from './Login';
+import { Routes, Route, } from 'react-router-dom';
+import Register from './FRONTEND/LoginForm/Register';
+import Navbar from './FRONTEND/Navbar';
+import Layout from "./src/components/Layout/Layout";
+
+
+function App() {
+
+  return (
+    <>
+ 
+
+  <Navbar />
+<Routes>
+<Route path='/' element={<Login />} />
+<Route path='/register' element={<Register />} />
+<Route path='/layout' element={<Layout />} />
+</Routes>
+</>
+  );
+
+}
+
+export default App;
+
+
+
+HMTkr4I2Yh209cS6
+<!----------------------->
+
+2end pass
+
+IQFRxHr2jF4HHnCs
+
+<!----->
+username
+
+mukashaalphonsine99
+
+db pass
+
+CF2pLmz1vRES8eCm
+<!----->
+
+<!------------------------>
+
+
+
+
+
+
+const express = require('express')
+const app = express()
+const port =  process.env.port || 5000
+
+const dbConnection = require('./db');
+
+app.get('/', (req, res) => res.send('Hello world'))
+app.listen(port, () => console.log(`Server started running ${port}`))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const mongoose = require("mongoose");
+
+function connectDB(){
+
+mongoose.connect("mongodb+srv://<Martin>:<Martin123>@cluster0.2dvb5dm.mongodb.net/car-rent", {useNewUrlParser:true,useUnifiedTopology:true});
+const connection = mongoose.connection
+
+connection.on("connected", () =>{
+
+    console.log("Mango DB Connection Successfully");
+});
+
+connection.on('error', () =>{
+
+    console.log("Mango DB Connection Errror");
+});
+
+}
+
+connectDB()
+
+module.exports = mongoose;
+
+
+
+
+<!=====================================login React started here ========================================>
+
+import '../../src/App2.css';
+import { useEffect } from "react";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";  
+
+const Login = () => {
+
+const [id, idupdate] = useState('');
+const [password, passwordupdate] = useState('');
+
+const usenavigate=useNavigate();
+
+useEffect(()=>{
+    sessionStorage.clear();
+
+},[]);
+
+const proceedLogin = (e) => {
+
+    e.preventDefault();  
+    if(validate()){
+        ///implementation
+        ///console.log('proceed');
+
+  fetch("http://localhost:3000/Customers/"+id).then((res)=>{
+
+  
+  return res.json();
+  }).then((resp)=>{
+//console.log(resp);
+
+if(Object.keys(resp).length===0){
+
+    toast.error('Please Enter Collected Your Username');
+}
+
+if(Object.keys(resp).length===0){
+    toast.error('please Enter Collected Your Password');
+}else{
+if(resp.password === password){
+    toast.success('Success');
+    sessionStorage.setItem('id', id);
+    usenavigate('/dashboard');
+
+}else{
+
+toast.success('Success To Login Welcome Admin');;
+
+}   
+}
+  }).catch((err)=>{
+toast.error('Login Failed Due to : ' +err.message);
+  });
+
+  }
+    
+}
+
+const validate=()=>{
+    let result=true;
+    if(id ==='' || id ==null){
+        result = false;
+        toast.error('please Enter Collected Your Username');
+    }
+    if(password ==='' || password ==null){
+        result = false;
+       toast.error('please Enter valid Credentails');
+    }
+    return result;
+}
+    return (
+        <diV>
+        <div className="offset-lg-3 col-lg-5">
+        <form className="container" onSubmit={proceedLogin}>
+
+
+         <div className="card">
+
+         <div className="card-header">
+         <h1>Customer Login</h1>
+         </div>
+         <div className="card-body">
+         <div className="row">
+
+
+         <div className="form-goup">
+<label>UserName <span className="errmsg">*</span></label>
+<input type="text" value={id} onChange={e=>idupdate(e.target.value)} className="form-control"></input>
+</div>
+      
+             <div className="form-goup">
+<label>Password <span className="errmsg">*</span></label>
+<input type="password" value={password} onChange={e=>passwordupdate(e.target.value)} className="form-control"></input>
+</div>
+
+         </div>
+      </div>
+      <div className="card-footer">
+<button type="submit" className="btn btn-primary">Login</button>
+<Link  to={'/register'}></Link>
+</div>
+
+         </div>
+         
+        </form>
+
+        </div>
+        
+        </diV>
+    )
+}
+
+export default Login;
+<!=================================== React Login ending from here========================>
+
+
+<!----------------------------------------- Home React test --------------------------------------->
+
+
+
+import { useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+
+
+const Home = () =>{
+ const usenavigate = useNavigate();
+    useEffect(()=>{
+
+        let id = sessionStorage.getItem('id');
+        if(id==='' || id ===null){
+            usenavigate('/login'); 
+        }
+    },[]);
+    return(
+ <>
+    <div className="header">
+<Link style={{textDecoration: 'none', width:'30%', color: 'white', paddingTop: '20px'}}  to={'/'}></Link>
+<Link style={{float: 'left', textDecoration:  'none', paddingLeft: '20px', color: 'white', paddingTop: '20px'}} to={''}></Link>
+<Link style={{float: 'right', width: '20%', textDecoration: 'none', color: 'white', paddingTop: '20px', fontFamily: '-moz-initial'}} to={'/login'}><div style={{background: '#000d6b', height: '50px', width: '150px', textAlign: 'center', paddingTop: '10px',  fontFamily: '-moz-initial'}}>Login Here!</div></Link>
+<h4 style={{paddingTop: '40px', color: 'white', textAlign: 'center', fontFamily: '-moz-initial'}}>Welcome To Car Rent Services</h4>
+
+
+        </div>
+        <div className="text-center">
+
+        
+        
+        </div>
+        
+       
+       </>
+    );
+}
+
+export default Home;
+
+
+<!============================================ ending home page =======================================>
+
+
+
+
+
+
+
+
+
+
+pass"
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!=============================== React CRUD =========================================>
+
+
+
+
+import { Link, useNavigate } from 'react-router-dom';
+import '../../App.css';
+import React, { useEffect, useState } from "react";
+
+const CarsList = () =>{
+    const [carsdata, carschange]=useState(null);
+   const navigate=useNavigate();
+  
+
+    const LoadDetail =(id)=>{
+
+        navigate('/cars/detail/' +id);
+
+    }
+    const LoadEdit =(id)=>{
+        navigate('/cars/edit/' +id);
+
+    }
+    const RemoveFunction =(id)=>{
+
+        if(window.confirm('Do you Want To Remove?'));
+
+
+        
+fetch("http://localhost:3000/Car-rent-customers/"+id, {
+    method: 'DELETE',
+}).then((res)=>{
+
+alert('Remove Succesfully.');
+window.location.reload();
+}).catch((err) => {
+
+    console.log(err.message);
+})
+
+    }
+    
+
+    useEffect(() => {
+
+fetch("http://localhost:3000/Car-rent-customers").then((res)=>{
+    return res.json();
+}).then((resp)=>{
+carschange(resp);
+
+}).catch((err)=>{
+    console.log(err.message);
+})
+    },[])
+
+
+    return (
+        <div className="container">
+      <div className="card">
+ 
+        <div className="card-title">
+      <h2>Cars LIst</h2>
+        </div>
+        <div>
+    
+  </div>
+        <div className="card-body"> 
+        <div className='divbtn'>
+        <Link to="/cars/create" className='btn btn-success'>Add New Car (+)</Link>
+        </div>
+<table className="table taable-bordered">
+<thead className=" bg-dark text-white">
+
+<tr>
+<td>Id</td>
+<td>Brand</td>
+<td>Car Name</td>
+<td>Model</td>
+<td>Price</td>
+<td>Speed</td>
+<td>Description</td>
+<td>Action</td>
+
+</tr>
+</thead>
+
+<tbody>
+
+{ 
+    carsdata &&
+    carsdata.map(item => (
+
+        <tr key={item.id}>
+
+            <td>{item.id}</td>
+            <td>{item.brand}</td>
+            <td>{item.carName}</td>
+            <td>{item.model}</td>
+            <td>{item.price}</td>
+            <td>{item.speed}</td>
+            <td>{item.description}</td>
+           <td><a onClick={()=>{LoadEdit(item.id )}} className="btn btn-success">Edit</a>
+            <a onClick={()=>{RemoveFunction(item.id )}} className="btn btn-danger">Remove</a>
+            <a onClick={()=>{LoadDetail(item.id )}} className="btn btn-primary">Details</a>
+            </td>
+        </tr>
+    
+    ))
+}
+
+</tbody>
+</table>
+
+        </div>
+      </div>
+
+        </div>
+
+        
+    )
+}
+
+
+export default CarsList;
+
+
+
+<!=============================================== END of ================================================>
+
+<!================================= BOOOKING CAR ROUTER =======================================================>
+
+
+import React from "react";
+
+import BookingPage from "../BookingPage"
+import { Fragment } from "react";
+
+import { Routes, Route} from "react-router-dom"
+//import Cart from '../ReduxBookingCar/Cart';
+import BookingCar from "../../Customers_Cars_Booking/ReduxBookingCar/BookingCar"
+
+const BookingRouter = ()=>{
+
+
+
+return (
+
+
+<Fragment>
+<Routes>
+<Route path="/" element={<BookingPage />}/>
+<Route path="/bookingcar" element={<BookingCar/>}/>
+</Routes>
+</Fragment>
+);
+
+}
+
+
+export default BookingRouter;
+
+<!=================================== ENDING BOOKING CAR ROUTER ===============================>

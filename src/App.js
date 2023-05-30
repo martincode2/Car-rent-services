@@ -1,32 +1,18 @@
+//import {BrowserRouter, Routes, Route} from 'react-router-dom'; 
+import Layout from "./FRONTEND/components/layout/Layout";
+//import Layout from './FRONTEND/dashboard/FRONTEND/components/Layout/Layout';
 
-import './App.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
-import Home from './pages/Home';
-import Login from './pages/Login';
-import Register from './pages/Register';
-import BookingCar from './pages/BookingCar';
-import 'antd/dist/reset.css';
+function App(){
+ 
+  return (<Layout />
 
 
 
+  )
+ 
 
-function App() {
-  return (
-    <div className='App'>
-<BrowserRouter>
-<Routes>
 
-  <Route index element = {<Home/>} />
-  <Route path="/login" element={<Login/>} />
-  <Route path='/register' element={<Register/>} />
-  <Route path='/bookingCar' element={<BookingCar/>} />
-</Routes>
-
-</BrowserRouter>
-
-    </div>
-  );
 }
+
 
 export default App;

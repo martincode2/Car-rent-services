@@ -1,0 +1,88 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap');
+:root{
+  --primary-color: #181b3a;
+  --secondary-color: #01d293;
+  --body-bg: #0b0c28;
+  --card-01-bg: linear-gradient(#ef621c, #e1424e);
+  --card-02-bg: linear-gradient(#01d293, #56c57A);
+  --card-03-bg: #725CFF;
+  --card-04-bg: #2884FF;
+  --heading-color: #fff;
+  --small-text-color: #808191;
+  --recommend-car01-bg: #ffff;
+
+}
+
+*{
+
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+}
+
+body{
+  font-family: "DM sans", sans-serif;
+  background: var(--body-bg);
+  
+}
+ul{
+  list-style: none;
+}
+a{
+ text-decoration: none;
+ color: unset;
+
+
+}
+.main_layout{
+  margin-left: 270px;
+}
+
+/*============================= App control ========*/
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+.btn
+
+
+
+.App-intro {
+  font-size: large;
+}
+
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.divbtn{
+
+  float: left;
+}
+.main{
+
+  box-shadow: 0px 6px 18px 7px rgba(0, 0, 0, 0.45) ;
+  -webkit-box-shadow: 0px 6px 18px 7px rgba(0,0,0,0.45);
+  -moz-box-shadow: 0px 6px 18px 7px rgba(0,0,0,0.45);
+}
+
+
