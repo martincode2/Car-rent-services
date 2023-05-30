@@ -1,7 +1,7 @@
 # Getting Started with Create React App
 Hello, how to run this React Web application
 
- Admin Detail
+ Admin Details
  ---------------
  User Name: Admin;
  Password: admin123
