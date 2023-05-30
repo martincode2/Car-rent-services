@@ -3,12 +3,12 @@ Hello, how to run this React Web application
 
  Admin Detail
  ---------------
- User Name: Admin
+ User Name: Admin;
  Password: admin123
  
  Customers Details
  ---------------
- Username: Tom
+ Username: Tom;
  Password: 123456
  
  
