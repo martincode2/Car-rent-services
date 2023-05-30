@@ -19,7 +19,7 @@ The first of all, open vscode new terminal and start db.sjon server port 3000 us
 # json-server --port 3000 db.json
 
 The second open other other new tab terminal and start db.json server port 7000 with this command 
-# json-server --port 7000 db.json
+# cd dbjson> json-server --port 7000 db.json
 
 Then After all above, open other new terminal you write
 # npm start 
